@@ -16,7 +16,7 @@ def login():
         user = User.query.filter_by(username=username).first()
         if user:
             if check_password_hash(user.hased_password, password):
-                flash('Logged in successfully!', category='success')
+                flash(f'This is your token: h', category='success')
                 login_user(user, remember=True)
                 return redirect(url_for('views.home'))
             else:
@@ -56,6 +56,7 @@ def sing_up():
                 password1, method='sha256'))
             db.session.add(newUser)
             db.session.commit()
+
             flash('account created', category='sucsess')
             return redirect(url_for('views.home'))
 
