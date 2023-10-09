@@ -6,7 +6,7 @@ db = SQLAlchemy()
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'secretkey'
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://arsenijbeglov:iamroot@localhost:5432/bhs_db'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://yourlogin:password@localhost:port/bhs_db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
     db.init_app(app)
